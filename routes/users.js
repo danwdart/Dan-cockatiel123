@@ -33,6 +33,16 @@ module.exports.create = async (req, res) => {
       });
     }
 
+    const user = await User.findOne({email});
+    if (user) {
+      return res.status(400).json({
+        status: 'fail',
+        data: {
+          name: 'User already exists.'
+        }
+      });
+    }
+
     if (!name) {
       return res.status(400).json({
         status: 'fail',
@@ -97,7 +107,7 @@ module.exports.create = async (req, res) => {
 
     await model.save();
 
-    return res.end(
+    return res.status(200).json(
       {
         status: 'success',
         data: model
