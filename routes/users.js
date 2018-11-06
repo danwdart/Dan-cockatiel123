@@ -38,7 +38,7 @@ module.exports.create = async (req, res) => {
       return res.status(400).json({
         status: 'fail',
         data: {
-          name: 'User already exists.'
+          email: 'User already exists.'
         }
       });
     }
@@ -56,7 +56,7 @@ module.exports.create = async (req, res) => {
       return res.status(400).json({
         status: 'fail',
         data: {
-          name: 'Password is a required parameter.'
+          password: 'Password is a required parameter.'
         }
       });
     }
@@ -66,7 +66,7 @@ module.exports.create = async (req, res) => {
       return res.status(400).json({
         status: 'fail',
         data: {
-          name: 'Password should be more than 8 characters in length.'
+          password: 'Password should be more than 8 characters in length.'
         }
       });
     }
@@ -91,8 +91,8 @@ module.exports.create = async (req, res) => {
     if (!institution) {
       return res.status(400).json({
         status: 'fail',
-        email: {
-          name: 'Registration on this email domain is currently disallowed.'
+        data: {
+          email: 'Registration on this email domain is currently disallowed.'
         }
       });
     }
@@ -110,7 +110,7 @@ module.exports.create = async (req, res) => {
     return res.status(200).json(
       {
         status: 'success',
-        data: model
+        data: model.toJSON()
       }
     );
   } catch (err) {
