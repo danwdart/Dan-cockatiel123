@@ -3,7 +3,7 @@ const bodyParser = require('body-parser');
 const sessions = require('client-sessions');
 const mongoose = require('mongoose');
 const passport = require('./lib/passport');
-const {requireLogin} = require('./lib/filters');
+const routes = require('./routes');
 
 // This should be an environment variable like process.env[MONGODB_STRING]
 // but it means we can't just `npm start`.
@@ -23,16 +23,6 @@ app.use(sessions({
 }));
 
 passport(app);
-
-// These could be in a separate library like routes.js
-/* Routes start */
-const index = require('./routes/index.js');
-const users = require('./routes/users.js');
-const books = require('./routes/books.js');
-
-app.get('/', index);
-app.post('/users/create', users.create);
-app.get('/books', requireLogin, books);
-/* Routes End */
+routes(app);
 
 app.listen(3000, () => console.log('Open http://localhost:3000 to see a response.'));
