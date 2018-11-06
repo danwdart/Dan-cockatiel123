@@ -29,4 +29,6 @@ db.books.insert(
 
 To run the demo, install using `npm install` and `npm start`.
 
-To run tests, `npm test`.
+To run linting and unit tests of the routes, `npm test`.
+
+To run a couple of sample integration tests, run the above mongo and run `npm run test:integration`. Mongo will need resetting before each run.
