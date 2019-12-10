@@ -15,22 +15,22 @@
   "author": "Dan Dart <npm@dandart.co.uk> (https://dandart.co.uk)",
   "license": "ISC",
   "dependencies": {
-    "bcrypt": "^3.0.2",
-    "body-parser": "^1.18.3",
+    "bcrypt": "^3.0.7",
+    "body-parser": "^1.19.0",
     "client-sessions": "^0.8.0",
-    "esm": "^3.0.84",
-    "express": "^4.16.4",
-    "mongoose": "^5.3.9",
-    "passport": "^0.4.0",
+    "esm": "^3.2.25",
+    "express": "^4.17.1",
+    "mongoose": "^5.8.0",
+    "passport": "^0.4.1",
     "passport-local": "^1.0.0"
   },
   "devDependencies": {
-    "eslint": "^5.8.0",
-    "mocha": "^5.2.0",
-    "mock-require": "^3.0.2",
-    "node-fetch": "^2.2.1",
-    "nyc": "^13.1.0",
-    "sinon": "^7.1.1",
-    "supertest": "^3.3.0"
+    "eslint": "^6.7.2",
+    "mocha": "^6.2.2",
+    "mock-require": "^3.0.3",
+    "node-fetch": "^2.6.0",
+    "nyc": "^15.0.0-beta.3",
+    "sinon": "^7.5.0",
+    "supertest": "^5.0.0-0"
   }
 }
